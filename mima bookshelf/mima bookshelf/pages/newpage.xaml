@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mima_bookshelf.pages.newpage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#1A6C00" Padding="0" >
+                <Label Text=" 編集" TextColor="White" Margin="10,2,0,2" FontSize="30"/>
+            </Frame>
+            
+            <ScrollView>
+                <StackLayout>
+
+                    <Grid Margin="5,0,5,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="35"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="タイトル" FontSize="20" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Entry x:Name="title_text" Grid.Row="0" Grid.Column="1"
+                       Text="" Placeholder="タイトルを入力" PlaceholderColor="Gray" TextColor="Black"/>
+
+                        <Label Text="面白さ" FontSize="15" Grid.Row="1" Grid.Column="0" x:Name="omosirosa_label" 
+                               HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Slider x:Name="omosirosa_slider" ValueChanged="omosirosa_slider_ValueChanged"  
+                                Grid.Row="1" Grid.Column="1"/>
+
+                        <Label Text="感動度" FontSize="15" Grid.Row="2" Grid.Column="0"  x:Name="kandoudo_label"
+                               HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Slider x:Name="kandou_slider" ValueChanged="kandou_slider_ValueChanged" 
+                                Grid.Row="2" Grid.Column="1"/>
+
+                        <Label Text="おすすめ度" FontSize="15" Grid.Row="3" Grid.Column="0"  x:Name="osusumedo_label"
+                               HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Slider x:Name="osusume_slider" ValueChanged="osusume_slider_ValueChanged"
+                                Grid.Row="3" Grid.Column="1"/>
+
+                        <Label Text="作者" FontSize="15" Grid.Row="4" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Entry x:Name="sakusya_text" Grid.Row="4" Grid.Column="1"/>
+
+                        <Label Text="読み始め" FontSize="15" Grid.Row="5" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <StackLayout Grid.Row="5" Grid.Column="1">
+                            <DatePicker x:Name="hazime_hizuke"/>
+                        </StackLayout>
+
+                        <Label Text="読み終わり" FontSize="15" Grid.Row="6" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <StackLayout Grid.Row="6" Grid.Column="1">
+                            <DatePicker x:Name="owari_hizuke"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+
+            <Grid VerticalOptions="End">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="キャンセル" Grid.Row="0" Grid.Column="0" x:Name="cancel_button"
+                        BackgroundColor="Gray" Clicked="cancel_button_Clicked"/>
+                <Button Text="保存" Grid.Row="0" Grid.Column="1" x:Name="hozon_button"
+                        BackgroundColor="#98fb98" Clicked="hozon_button_Clicked"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

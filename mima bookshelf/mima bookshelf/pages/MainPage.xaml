@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mima_bookshelf.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#1A6C00" Padding="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text=" 本棚" FontSize="30" Grid.Row="0" Grid.Column="0" TextColor="White"
+                       Margin="0,0,0,0"/>
+
+                <Button x:Name="add" Clicked="add_Clicked" BackgroundColor="#1A6C00" Text="+追加" TextColor="White"
+                    HorizontalOptions="End" Margin="0,0,0,0"
+                            Grid.Row="0" Grid.Column="0"/>
+            
+            </Grid>
+        </Frame>
+
+        <ListView x:Name="listview" Margin="10,5,10,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="100">
+                        <StackLayout>
+                            <Label Text="{Binding .}" FontSize="20" TextColor="Black"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+
+</ContentPage>
